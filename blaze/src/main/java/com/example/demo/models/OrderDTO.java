@@ -15,6 +15,7 @@ public class OrderDTO {
 	private String order_number;
 	
 	private String status;
+	
 	@DateTimeFormat(style = "M-") 
 	@CreatedDate
 	private Date date;

@@ -30,6 +30,7 @@ public class ProductController {
 	@Autowired
 	private IProductDAO repoIProducts;
 	
+	
 	@GetMapping
 	public ResponseEntity<List<ProductDTO>> findAllProducts(){
 		
@@ -37,6 +38,20 @@ public class ProductController {
 		
 		
 		return ResponseEntity.status(HttpStatus.OK).body(getAllProductsResponseBody);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<?> findProductById(@PathVariable String id){
+		
+		try {
+			
+			ProductDTO productFounded = repoIProducts.findById(id).get();
+			return  ResponseEntity.status(HttpStatus.OK).body(productFounded);
+			
+		} catch (Exception e) {
+			return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	
 	}
 	
 	@PostMapping

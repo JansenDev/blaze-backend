@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProductDTO {
 	
 	@Id
+	private String _id;
+	
 	private String name;
 	
 	private String category;
@@ -14,6 +16,14 @@ public class ProductDTO {
 	private double unit_price;
 	
 	private String active;
+
+//	public String get_id() {
+//		return _id;
+//	}
+
+	public void set_id(String _id) {
+		this._id = _id;
+	}
 
 	public String getName() {
 		return name;

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.OrderDTO;
-import com.example.demo.models.OrderItemDTO;
 import com.example.demo.repositories.IOrderDAO;
 import com.example.demo.utils.Utilities;
 
